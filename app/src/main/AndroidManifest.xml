@@ -14,6 +14,10 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <!--진동울리는 퍼미션 추가-->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
     <uses-feature android:glEsVersion="0x00020000" android:required="true" />
 
 
@@ -36,6 +40,11 @@
             </intent-filter>
         </activity>
 
+        <receiver android:name=".LocationReceiver">
+            <intent-filter>
+                <action android:name="com.example.google.map.receiver"></action>
+            </intent-filter>
+        </receiver>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
